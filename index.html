@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <section class="timeline">
+      <h1>Responsive Timeline</h1>
+      <ul>
+        <li>
+          <div class="content">
+            <h2>
+              <time>2016</time>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+              debitis praesentium itaque veniam dolorum cupiditate asperiores
+              optio beatae, qui perferendis ipsam odit modi nemo natus corrupti
+              neque quos distinctio facilis?
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="content">
+            <h2>
+              <time>2015</time>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Obcaecati quas, reiciendis quis sequi voluptatem consectetur
+              adipisci accusamus hic vel vero ea ad iure! Natus, ipsum, enim
+              aspernatur fugit voluptatibus similique?
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="content">
+            <h2>
+              <time>2012</time>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Officiis, expedita. Dolorem blanditiis, delectus omnis eos
+              accusamus mollitia et cupiditate officia maxime vel, nesciunt
+              alias eius, quibusdam in ea eveniet ut!
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="content">
+            <h2>
+              <time>2010</time>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Veritatis voluptas voluptatum dolorum, quibusdam dignissimos animi
+              pariatur laboriosam quis explicabo similique aperiam debitis quam
+              velit quod, reprehenderit harum ratione. Iste, unde?
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <div class="container">
+        <div id="leftbox">
+          <div class="progressbar-container">
+            <progressbar v-for="(item, index) in items" v-if="index <= 3" :target="item.value">
+              <div class="progress-value" slot-scope="props">
+                <span class="lang">{{ item.key }}</span>
+                <span :class="props.text">{{ item.value }} %</span>
+              </div>
+            </progressbar>
+          </div>
+        </div>
+        <div id="rightbox">
+          <div class="progressbar-container">
+            <progressbar v-for="(item, index) in items" v-if="index >= 3" :target="item.value">
+              <div class="progress-value" slot-scope="props">
+                <span class="lang">{{ item.key }}</span>
+                <span :class="props.text">{{ item.value }} %</span>
+              </div>
+            </progressbar>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
