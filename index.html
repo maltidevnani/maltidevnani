@@ -5,91 +5,239 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
-    <section class="timeline">
-      <h1>Responsive Timeline</h1>
-      <ul>
-        <li>
-          <div class="content">
-            <h2>
-              <time>2016</time>
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-              debitis praesentium itaque veniam dolorum cupiditate asperiores
-              optio beatae, qui perferendis ipsam odit modi nemo natus corrupti
-              neque quos distinctio facilis?
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            <h2>
-              <time>2015</time>
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Obcaecati quas, reiciendis quis sequi voluptatem consectetur
-              adipisci accusamus hic vel vero ea ad iure! Natus, ipsum, enim
-              aspernatur fugit voluptatibus similique?
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            <h2>
-              <time>2012</time>
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Officiis, expedita. Dolorem blanditiis, delectus omnis eos
-              accusamus mollitia et cupiditate officia maxime vel, nesciunt
-              alias eius, quibusdam in ea eveniet ut!
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            <h2>
-              <time>2010</time>
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Veritatis voluptas voluptatum dolorum, quibusdam dignissimos animi
-              pariatur laboriosam quis explicabo similique aperiam debitis quam
-              velit quod, reprehenderit harum ratione. Iste, unde?
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section>
-      <div class="container">
-        <div id="leftbox">
-          <div class="progressbar-container">
-            <progressbar v-for="(item, index) in items" v-if="index <= 3" :target="item.value">
-              <div class="progress-value" slot-scope="props">
-                <span class="lang">{{ item.key }}</span>
-                <span :class="props.text">{{ item.value }} %</span>
+      <section class="hero">
+          <div class="content">             
+            <div class="header">
+                <div class="card">
+                  <div class="card-body">
+                    <img src="malti.jpg">
+                    <h1>MALTI DEVNANI</h1>
+                    <div class="user-info">Software Developer</div>
+                    <p>Software engineer with 3 years of experience in Android app development.
+                   Currently pursuing post graduate diploma in Mobile Solution development.
+                   Looking for full time job opportunity as a software developer.</p>
+                   <a class="user-bottom" href="http://www.facebook.com"><i class="fab fa-github"></i></a>
+                 </div> 
+                  <div class="user-bottom">
+                    
+                  </div>   
+                </div>                                  
               </div>
-            </progressbar>
+          </div>
+      </section>    
+    <section class="about-myself">
+      <div class="content">
+        <h2>Hi !</h2>
+        <p>I'm <span>name</span>.. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, dicta. Veniam pariatur minima voluptas culpa rem. Suscipit veritatis vel non neque alias, molestiae id incidunt natus ipsum vero, quod aut qui sequi quis laudantium <span>architecto exercitationem</span> recusandae eius. Incidunt velit quasi debitis, commodi vero optio nesciunt perspiciatis quidem quos accusantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius harum minima, ipsum animi. Provident quae hic, perspiciatis accusamus quaerat iure <span>tenetur</span> explicabo dicta quos aspernatur quis, delectus itaque vel.</p>
+      </div>
+    </section>
+    <section class="experience">
+      <div class="content">
+        <h1>Experience</h1>
+        <ul>
+          <li>
+            <div class="experience-content hidden">
+              <h2>Company</h2>
+              <div class="experience-time">Jan - Jun 2016</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis praesentium itaque veniam dolorum cupiditate asperiores optio beatae, qui perferendis ipsam odit modi nemo natus corrupti neque quos distinctio facilis?</p>
+            </div>
+          </li>
+          <li>
+            <div class="experience-content hidden">
+              <h2>Company</h2>
+              <div class="experience-time">Jul - Dec 2015</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quas, reiciendis quis sequi voluptatem consectetur adipisci accusamus hic vel vero ea ad iure! Natus, ipsum, enim aspernatur fugit voluptatibus similique?</p>
+            </div>
+          </li>
+          <li>
+            <div class="experience-content hidden">
+              <h2>Company</h2>
+              <div class="experience-time">Mar - Jun 2015</div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati quas, reiciendis quis sequi voluptatem consectetur adipisci accusamus hic vel vero ea ad iure! Natus, ipsum, enim aspernatur fugit voluptatibus similique?</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="skills">
+      <div class="content">
+        <div class="development-wrapper">
+          <h2 class="development-title">Development</h2>
+          <ul class="skills-bar-container">
+            <li>
+              <div class="progressbar-title">
+                <h3>HTML5</h3>
+                <span class="percent" id="html-pourcent"></span>
+              </div>
+              <div class="bar-container" data-percent="95">
+                <span class="progressbar" id="progress-html"></span>
+              </div>
+            </li>
+            <li>
+              <div class="progressbar-title">
+                <h3>CSS / SASS</h3>
+                <span class="percent" id="css-pourcent"></span>
+              </div>
+              <div class="bar-container" data-percent="85">
+                <span class="progressbar" id="progress-css"></span>
+              </div>
+            </li>
+            <li>
+              <div class="progressbar-title">
+                <h3>JavaScript / jQuery</h3>
+                <span class="percent" id="javascript-pourcent"></span>
+              </div>
+              <div class="bar-container" data-percent="80">
+                <span class="progressbar" id="progress-javascript"></span>
+              </div>
+            </li>
+            <li>
+              <div class="progressbar-title">
+                <h3>PHP</h3>
+                <span class="percent" id="php-pourcent"></span>
+              </div>
+              <div class="bar-container" data-percent="65">
+                <span class="progressbar" id="progress-php"></span>
+              </div>
+            </li>
+            <li>
+              <div class="progressbar-title">
+                <h3>AngularJS</h3>
+                <span class="percent" id="angular-pourcent"></span>
+              </div>
+              <div class="bar-container" data-percent="70">
+                <span class="progressbar" id="progress-angular"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="tools-knowledge-wrapper">
+          <div class="tools-wrapper">
+            <h2 class="title">Tools</h2>
+            <ul class="tools">
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Photoshop
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Adobe Illustrator
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Sublime text
+              </li>
+            </ul>
+          </div>
+          <div class="knowledge-wrapper">
+            <h2 class="title">Knowledge</h2>
+            <ul class="knowledge">
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Wireframing
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Responsive design
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                ...
+              </li>
+            </ul>
           </div>
         </div>
-        <div id="rightbox">
-          <div class="progressbar-container">
-            <progressbar v-for="(item, index) in items" v-if="index >= 3" :target="item.value">
-              <div class="progress-value" slot-scope="props">
-                <span class="lang">{{ item.key }}</span>
-                <span :class="props.text">{{ item.value }} %</span>
-              </div>
-            </progressbar>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </section>
+    <section class="resume">
+      <div class="content">
+        <a href="#" target="_blank">
+          <div class="btn-resume">
+            <i class="fa fa-download fa-2x" aria-hidden="true"></i>
+            <span>Download my resume<span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="content">
+        
+        <h1>Some works</h1>
+        
+        <div class="projects">
+          
+          <div class="project">
+            <div class="project-image">
+              <img src="https://source.unsplash.com/WLUHO9A_xik/" alt=""/>
+            </div>
+            <div class="project-title">
+              <h2>Project #1</h2>
+            </div>
+            <div class="project-description">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi asperiores odio libero, molestiae at suscipit totam sequi, delectus temporibus. Provident itaque illum animi cupiditate quaerat! Id inventore, excepturi sequi totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores iure ex repudiandae, enim maxime.</p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-image">
+              <img src="https://source.unsplash.com/jd0hS7Vhn_A" alt=""/>
+            </div>
+            <div class="project-title">
+              <h2>Project #2</h2>
+            </div>
+            <div class="project-description">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi magni consequatur dolores distinctio quod accusamus voluptatum obcaecati animi expedita rem odio explicabo veritatis voluptas ducimus voluptate earum laborum, qui maiores doloremque deserunt sapiente corporis et culpa, nihil fuga. Sit nemo maxime itaque maiores iure, similique ratione veritatis quidem nulla explicabo.</p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-image">
+              <img src="https://source.unsplash.com/AyYW_bUWerc/" alt=""/>
+            </div>
+            <div class="project-title">
+              <h2>Project #3</h2>
+            </div>
+            <div class="project-description">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi asperiores odio libero, molestiae at suscipit totam sequi, delectus temporibus. Provident itaque illum animi cupiditate quaerat! Id inventore, excepturi sequi totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores iure ex repudiandae, enim maxime.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
+    <section class="contact">
+      <div class="content">
+        <ul class="socials">
+          <li class="social">
+            <a href="#" target="_blank" class="email">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="social">
+            <a href="#" target="_blank" class="twitter">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="social">
+            <a href="#" target="_blank" class="linkedin">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="social">
+            <a href="#" target="_blank" class="codepen">
+              <i class="fa fa-codepen" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </section>
+    <section class="footer">
+      <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Arnaud</p>
+    </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

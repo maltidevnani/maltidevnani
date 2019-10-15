@@ -1,97 +1,70 @@
-/* Check the location of each element */
-$('.content').each( function(i){
-  
-    var bottom_of_object= $(this).offset().top + $(this).outerHeight();
-    var bottom_of_window = $(window).height();
-    
-    if( bottom_of_object > bottom_of_window){
-      $(this).addClass('hidden');
-    }
-  });
-  
-  
+$( document ).ready(function() {
+  // Main variables
+    var $aboutTitle = $('.about-myself .content h2');
+    var $developmentWrapper = $('.development-wrapper');
+    var developmentIsVisible = false;
+
+
+  /* ####### HERO SECTION ####### */
+
+  $('.hero .content .header').delay(500).animate({
+    'opacity':'1',
+    'top': '50%'
+  },1000);
+
+
   $(window).scroll( function(){
-      /* Check the location of each element hidden */
-      $('.hidden').each( function(i){
-        
+
+    var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+    /* ##### ABOUT MYSELF SECTION #### */
+    if( bottom_of_window > ($aboutTitle.offset().top + $aboutTitle.outerHeight())){
+      $('.about-myself .content h2').addClass('aboutTitleVisible');
+    } 
+  /* ##### EXPERIENCE SECTION #### */
+
+      // Check the location of each element hidden */
+      $('.experience .content .hidden').each( function(i){
+
           var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-        
+
           /* If the object is completely visible in the window, fadeIn it */
           if( bottom_of_window > bottom_of_object ){
-            $(this).animate({'opacity':'1'},700);
+
+            $(this).animate({
+              'opacity':'1',
+              'margin-left': '0'
+            },600);
           }
       });
-  });
-  Vue.component('progressbar', {
-    template: `<div>
-                  <slot></slot>
-                  <progress :value="value" max="100"/>
-                </div>`,
-    props: {
-      target: {
-        type: Number
-      }
-    },
-    data () {
-      return {
-        value: 0,
-        interval: null
-      }
-    },
-    mounted () {
-      this.interval = setInterval(() => {
-        this.value++
-      }, 10)
-    },
-    watch: {
-      value (v) {
-        if (v === this.target) {
-          clearInterval(this.interval)
-        }
-      }
-    }
-  })
-  
-  new Vue({
-    el: '.progressbar-container',
-    components: ['progressbar'],
-    data () {
-      return {
-        items: [
-          {
-            key: 'HTML/CSS',
-            value: 50,
-          },
-          {
-            key: 'JS',
-            value: 75
-          },
-          {
-            key: 'JAVA',
-            value: 100
-          },
-          {
-            key: 'PHP',
-            value: 90
-          },
-          {
-            key: 'HTML/CSS',
-            value: 50,
-          },
-          {
-            key: 'JS',
-            value: 75
-          },
-          {
-            key: 'JAVA',
-            value: 100
-          },
-          {
-            key: 'PHP',
-            value: 90
+
+  /*###### SKILLS SECTION ######*/
+
+    var middle_of_developmentWrapper = $developmentWrapper.offset().top + $developmentWrapper.outerHeight()/2;
+
+    if((bottom_of_window > middle_of_developmentWrapper)&& (developmentIsVisible == false)){
+
+      $('.skills-bar-container li').each( function(){
+
+        var $barContainer = $(this).find('.bar-container');
+        var dataPercent = parseInt($barContainer.data('percent'));
+        var elem = $(this).find('.progressbar');
+        var percent = $(this).find('.percent');
+        var width = 0;
+
+        var id = setInterval(frame, 15);
+
+        function frame() {
+          if (width >= dataPercent) {
+              clearInterval(id);
+          } else {
+            width++;
+            elem.css("width", width+"%");
+            percent.html(width+" %");
           }
-        ]
-      }
+        }
+      });
+      developmentIsVisible = true;
     }
-  })
+  }); // -- End window scroll --
+});
