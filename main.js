@@ -9,7 +9,7 @@ $( document ).ready(function() {
 
   $('.hero .content .header').delay(500).animate({
     'opacity':'1',
-    'top': '50%'
+    'top': '10%'
   },1000);
 
 
